@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head><title>Tickets for codex</title><meta name='viewport' content='width=device-width, initial-scale=1'><style>
+body { background-color: #313338; color: #DBDEE1; font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 20px; }
+h1, h2 { color: #FFFFFF; border-bottom: 1px solid #4E5058; padding-bottom: 10px; }
+ul { list-style-type: none; padding: 0; }
+li { background-color: #2B2D31; margin-bottom: 10px; padding: 15px; border-radius: 8px; border: 1px solid #1E1F22; transition: background-color 0.2s; }
+li:hover { background-color: #35373C; }
+a { color: #00A8FC; text-decoration: none; font-weight: 500; }
+a:hover { text-decoration: underline; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 20px; }
+.card { background-color: #2B2D31; padding: 20px; border-radius: 8px; text-align: center; border: 1px solid #1E1F22; }
+.card a { color: #5865F2; font-size: 1.1em; }
+.timestamp { font-size: 0.8em; color: #949BA4; display: block; margin-top: 5px; }
+
+/* Navigation */
+.nav-header { background-color: #2B2D31; padding: 15px; border-bottom: 1px solid #4E5058; display: flex; gap: 10px; margin-bottom: 20px; border-radius: 8px; }
+.nav-btn { background-color: #5865F2; color: white !important; padding: 10px 20px; border-radius: 5px; text-decoration: none !important; font-size: 14px; font-weight: 600; transition: background-color 0.2s; border: none; cursor: pointer; display: inline-block; }
+.nav-btn:hover { background-color: #4752C4; }
+.nav-btn.secondary { background-color: #4E5058; }
+.nav-btn.secondary:hover { background-color: #6D6F78; }
+@media (max-width: 600px) { .nav-header { flex-direction: column; } .nav-btn { text-align: center; } }
+</style></head><body>
+    <div class="nav-header">
+        <button class="nav-btn secondary" onclick="window.history.back()">← Back</button>
+        <a href="https://jxshmc.github.io/Ticket-Transcripts/tickets/index.html" class="nav-btn">🏠 Index Homepage</a>
+    </div>
+    <h1>Tickets for codex</h1>
+    <div class="search-container" style="margin-bottom: 20px;">
+        <input type="text" id="searchInput" onkeyup="filterIndex()" placeholder="🔍 Search for tickets or users..." 
+               style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #444; background: #2f3136; color: white; font-size: 16px;">
+    </div>
+    <script>
+    function filterIndex() {
+        var input = document.getElementById('searchInput');
+        var filter = input.value.toLowerCase();
+        var cards = document.getElementsByClassName('card');
+        var listItems = document.getElementsByTagName('li');
+
+        for (var i = 0; i < cards.length; i++) {
+            var name = cards[i].innerText || cards[i].textContent;
+            cards[i].style.display = name.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+        }
+        for (var i = 0; i < listItems.length; i++) {
+            var name = listItems[i].innerText || listItems[i].textContent;
+            listItems[i].style.display = name.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+        }
+    }
+    </script>
+    <h2>Personal Archive</h2><ul><li><a href='https://minewarmc.github.io/MinewarTickets/tickets/codex/1496230591249776741.html'>codex_80450-generalsupport-3</a><span class='timestamp'>2026-04-21 19:40:09 by codex_80450</span></li></ul></body></html>
